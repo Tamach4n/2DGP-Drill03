@@ -3,21 +3,26 @@ import math
 
 open_canvas()
 grass = load_image('grass.png')
-character = load_image('character.png')
+boy = load_image('character.png')
 
 x = 0
 y = 90
 
 def run_rectangle():
-    print("Circle")
-    pass
+    clear_canvas_now()
+    boy.draw_now(400, 90)
+    grass.draw_now(400, 30)
+    delay(0.1)
 
 def run_circle():
-    print("Rectnagle")
-    pass    #   빈 함수 > 아무 일도 하지 않음  
+    clear_canvas_now()
+    boy.draw_now(400, 90)
+    grass.draw_now(400, 30)
+    delay(0.1)
 
-while True:
+while True: #   뼈대 잡는 것이 제일 중요
     run_rectangle()
-    run_circle()    
+    run_circle()
+    break
 
 close_canvas()
