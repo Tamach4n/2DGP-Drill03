@@ -11,8 +11,8 @@ def printImages(x, y):
     grass.draw_now(400, 30)
     delay(0.01)
 
-def run_rBottom():
-    for x in range(20, 780, 5):
+def run_rBottom(s, e):
+    for x in range(s, e, 5):
         printImages(x, 90)
 
 def run_rRight():
@@ -26,12 +26,28 @@ def run_rTop():
 def run_rLeft():
     for y in range(555, 90, -5):
         printImages(20, y)
+        
+
+def tri_BC(s, e):
+    for x in range(s, e, 2):
+        printImages(x, 90)
+
+def tri_AC():
+    #for x in range
+    while x > 400:
+        x -= 1
+        y += math.root(3)
+        printImages(x, y)
+
+#def tri_AB():
+    #while 
 
 def run_rectangle():
-    run_rBottom()
+    run_rBottom(400, 780)
     run_rRight()
     run_rTop()
     run_rLeft()
+    run_rBottom(20, 400)
 
 def run_circle():
     r, cx, cy = 250, 800 // 2, 600 // 2 + 40    #   화면 크기의 반
@@ -43,9 +59,16 @@ def run_circle():
 
         printImages(x, y)
 
+def run_triangle():
+    tri_BC(400, 700)
+    #tri_AC()
+    #tri_AB()
+    #tri_BC(100, 400)
+
 while True:     #   뼈대 잡는 것이 제일 중요
-    run_rectangle()
+    #run_rectangle()
     #run_circle()
+    run_triangle()
     break
 
 close_canvas()
