@@ -12,19 +12,19 @@ def printImages(x, y):
     delay(0.01)
 
 def run_rBottom(s, e):
-    for x in range(s, e, 5):
+    for x in range(s, e + 5, 5):
         printImages(x, 90)
 
 def run_rRight():
-    for y in range(90, 460, 5):
+    for y in range(90, 465, 5):
         printImages(680, y)
 
 def run_rTop():
-    for x in range(680, 120, -5):
+    for x in range(680, 115, -5):
         printImages(x, 460)
 
 def run_rLeft():
-    for y in range(460, 90, -5):
+    for y in range(460, 85, -5):
         printImages(120, y)
         
 
@@ -67,15 +67,16 @@ def run_rectangle():
     run_rBottom(120, 400)
 
 def run_circle():
-    r, cx, cy = 200, 800 // 2, 600 // 2 - 13    #   화면 크기의 반
+    r, cx, cy = 200, 800 // 2, 600 // 2 - 10    #   화면 크기의 반
     
     for degree in range(0, 360, 1):
         theta = math.radians(degree - 90)    #   degree -> rad, -90 ~ 270
         x = r * math.cos(theta) + cx
         y = r * math.sin(theta) + cy
 
-        printImages(x, y)
-
+        printImages(x, y)        
+        print(y)
+        
 def run_triangle():
     tri_BC(400, 700)
     tri_AC()
